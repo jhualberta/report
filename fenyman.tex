@@ -1,0 +1,169 @@
+\usepackage{amsmath}
+%\DeclareGraphicsRule{*}{mps}{*}{}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\providecommand{\LuaTeX}{Lua\TeX}
+\providecommand{\tikzfeynmanname}{\tikzname-Feynman}
+\centering
+\begin{tikzpicture}
+\begin{feynman}
+\vertex (a1) {\(d\)}
+
+\vertex[right=1.5cm of a1] (a2);%% W- goes out
+
+\vertex[above=2em of a2] (vv1);\vertex[right=1cm of vv1] (v1);
+
+\vertex[above=0.2cm of v1] (blank11);
+
+\vertex[right=1cm of blank11] (v3){\(\nu_e\)};
+
+\vertex[below=0.4cm of v1] (blank1);
+
+\vertex[right=1cm of blank1] (v5){\(e^{-}\)}; % lower vertex
+
+
+
+\vertex[above=4em of a2] (vv2);\vertex[right=1cm of vv2] (v2);
+
+\vertex[below=0.2cm of v2] (blank22);
+
+\vertex[right=1cm of blank22] (v4){\(\nu_e\)};
+
+\vertex[above=0.4cm of v2] (blank2);
+
+\vertex[right=1cm of blank2] (v6){\(e^{-}\)};
+
+
+
+\vertex[right=2cm of a2] (a3) {\(u\)};
+
+
+
+\vertex[below=1em of a1] (b1) {\(d\)};
+
+
+
+\vertex[below=1em of b1] (b2) {\(u\)};
+
+
+
+%top n
+
+
+
+\vertex[above=6em of a1] (aa1) {\(d\)};\vertex[right=1.5cm of aa1] (aa1v);%%W- goes out
+
+
+
+\vertex[above=1em of aa1] (aa2) {\(d\)};
+
+
+
+\vertex[above=1em of aa2] (aa3) {\(u\)};
+
+
+
+%% Equivalent way to obtain (d):
+
+
+
+%%top right p = udu
+
+
+
+\vertex[above=6em of a3] (c1) {\(u\)};
+
+
+
+\vertex[above=1em of c1] (c2) {\(d\)};
+
+
+
+\vertex[above=1em of c2] (c3) {\(u\)};
+
+
+
+%%bottom right p = udu
+
+
+
+\vertex[below=1em of a3] (d1) {\(u\)};
+
+
+
+\vertex[below=1em of d1] (d2) {\(d\)};
+
+
+
+
+
+
+
+\diagram* {
+
+(a1) -- [fermion] (a2) -- [fermion] (a3),
+
+(b1) -- [fermion] (d1),
+
+(b2) -- [fermion] (d2),
+
+(aa1) -- [fermion] (aa1v) -- [fermion](c1),
+
+(aa2) -- [fermion] (c2),%d to d
+
+(aa3) -- [fermion] (c3),
+
+(a2) -- [boson,edge label=\(W^{-}\)] (v1),
+
+(v2) -- [boson,edge label=\(W^{-}\)] (aa1v),
+
+(v3) -- [fermion] (v1) % nue to W
+
+(v4) -- [fermion] (v2)
+
+(v1) -- [fermion] (v5) %W to e
+
+(v2) -- [fermion] (v6) %W to e
+
+%	(v1) -- [plain] (v2) % connection of W
+
+};
+
+
+
+\draw [decoration={brace}, decorate] (b2.south west) -- (a1.north west)
+
+
+
+node [pos=0.5, left] {\(n\)};
+
+
+
+\draw [decoration={brace}, decorate] (aa1.south west) -- (aa3.north west)
+
+
+
+node [pos=0.5, left] {\(n\)};
+
+
+
+\draw [decoration={brace}, decorate] (c3.north east) -- (c1.south east)
+
+
+
+node [pos=0.5, right] {\(p\)};
+
+
+
+\draw [decoration={brace}, decorate] (a3.north east) -- (d2.south east)
+
+
+
+node [pos=0.5, right] {\(p\)};
+
+
+
+\end{feynman}
+
+
+
+\end{tikzpicture}\label{feynman}
