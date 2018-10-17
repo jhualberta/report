@@ -1,12 +1,15 @@
+\documentclass[preprint,12pt]{elsarticle}
 \usepackage{amsmath}
 %\DeclareGraphicsRule{*}{mps}{*}{}
 \usepackage[compat=1.1.0]{tikz-feynman}
 \providecommand{\LuaTeX}{Lua\TeX}
 \providecommand{\tikzfeynmanname}{\tikzname-Feynman}
 \centering
+
+\begin{document}
 \begin{tikzpicture}
 \begin{feynman}
-\vertex (a1) {\(d\)}
+\vertex (a1) {\(d\)};
 
 \vertex[right=1.5cm of a1] (a2);%% W- goes out
 
@@ -20,83 +23,30 @@
 
 \vertex[right=1cm of blank1] (v5){\(e^{-}\)}; % lower vertex
 
-
-
 \vertex[above=4em of a2] (vv2);\vertex[right=1cm of vv2] (v2);
 
 \vertex[below=0.2cm of v2] (blank22);
 
 \vertex[right=1cm of blank22] (v4){\(\nu_e\)};
-
 \vertex[above=0.4cm of v2] (blank2);
-
 \vertex[right=1cm of blank2] (v6){\(e^{-}\)};
-
-
-
 \vertex[right=2cm of a2] (a3) {\(u\)};
-
-
-
 \vertex[below=1em of a1] (b1) {\(d\)};
-
-
-
 \vertex[below=1em of b1] (b2) {\(u\)};
-
-
-
 %top n
-
-
-
 \vertex[above=6em of a1] (aa1) {\(d\)};\vertex[right=1.5cm of aa1] (aa1v);%%W- goes out
-
-
-
 \vertex[above=1em of aa1] (aa2) {\(d\)};
-
-
-
 \vertex[above=1em of aa2] (aa3) {\(u\)};
-
-
 
 %% Equivalent way to obtain (d):
 
-
-
 %%top right p = udu
-
-
-
 \vertex[above=6em of a3] (c1) {\(u\)};
-
-
-
 \vertex[above=1em of c1] (c2) {\(d\)};
-
-
-
 \vertex[above=1em of c2] (c3) {\(u\)};
-
-
-
 %%bottom right p = udu
-
-
-
 \vertex[below=1em of a3] (d1) {\(u\)};
-
-
-
 \vertex[below=1em of d1] (d2) {\(d\)};
-
-
-
-
-
-
 
 \diagram* {
 
@@ -160,10 +110,8 @@ node [pos=0.5, right] {\(p\)};
 
 node [pos=0.5, right] {\(p\)};
 
-
-
 \end{feynman}
-
-
-
 \end{tikzpicture}\label{feynman}
+
+
+\end{document}
